@@ -59,7 +59,7 @@ lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
 EOF
 header_info
 msg "Installing Tailscale..."
-lxc-attach -n $CTID -- bash -c "$(curl -fsSL https://tailscale.com/install.sh)" &>/dev/null || exit
+lxc-attach -n $CTID -- bash -c "$(curl -fsSL curl -fsSL https://pkgs.netbird.io/install.sh" &>/dev/null || exit
 msg "Installed Tailscale"
 sleep 2
 msg "\e[1;32m ✔ Completed Successfully!\e[0m"
